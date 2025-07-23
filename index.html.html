@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetSuite Optimization Assessment | SmartCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #f8f9fa;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            max-width: 800px;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 300;
+            color: #2c2c2c;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .header .highlight {
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            color: #6c757d;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .expert-badge {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: #495057;
+            margin-bottom: 40px;
+        }
+
+        .expert-badge::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #dc3545;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .main-content {
+            max-width: 100%;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f1f3f4;
+            padding-bottom: 8px;
+        }
+
+        .assessment-intro {
+            background: #f8f9fa;
+            padding: 32px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .assessment-intro h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 16px;
+        }
+
+        .assessment-intro p {
+            color: #6c757d;
+            margin-bottom: 12px;
+        }
+
+        .key-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .key-area {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.2s ease;
+        }
+
+        .key-area:hover {
+            border-color: #dc3545;
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.1);
+        }
+
+        .key-area h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 8px;
+        }
+
+        .key-area p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .assessment-form {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 32px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .form-header {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .form-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #dc3545;
+            box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            background: #c82333;
+        }
+
+        .submit-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .privacy-notice {
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+
+        .privacy-notice a {
+            color: #dc3545;
+            text-decoration: none;
+        }
+
+        .privacy-notice a:hover {
+            text-decoration: underline;
+        }
+
+        .value-props {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .value-props li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            color: #495057;
+        }
+
+        .value-props li::before {
+            content: "✓";
+            color: #dc3545;
+            font-weight: 600;
+            margin-right: 12px;
+            margin-top: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #dc3545;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .assessment-section {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 24px;
+            display: none;
+        }
+
+        .assessment-section.active {
+            display: block;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .section-number {
+            background: #dc3545;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 16px;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c2c2c;
+        }
+
+        .assessment-options {
+            margin: 24px 0;
+        }
+
+        .assessment-option {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding: 16px;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .assessment-option:hover {
+            border-color: #dc3545;
+            background: #fdf7f7;
+        }
+
+        .assessment-option.selected {
+            border-color: #dc3545;
+            background: #fdf7f7;
+        }
+
+        .assessment-option input[type="radio"] {
+            margin-right: 12px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .assessment-option label {
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .option-content {
+            flex: 1;
+        }
+
+        .option-title {
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .option-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .roi-insight {
+            background: #fff8dc;
+            border: 1px solid #ffd700;
+            border-radius: 6px;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        .roi-insight strong {
+            color: #b8860b;
+        }
+
+        .next-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .next-btn:hover {
+            background: #5a6268;
+        }
+
+        .results-section {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .results-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 24px;
+        }
+
+        .total-score {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #dc3545;
+            margin: 24px 0;
+        }
+
+        .score-interpretation {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .cta-section {
+            background: #2c2c2c;
+            color: white;
+            padding: 32px;
+            border-radius: 8px;
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #dc3545;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 12px 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #c82333;
+        }
+
+        .progress-bar {
+            height: 3px;
+            background: #e9ecef;
+            border-radius: 2px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #dc3545;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .resource-card:hover {
+            border-color: #dc3545;
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.15);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .assessment-form {
+                position: static;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>NetSuite <span class="highlight">Optimization Assessment</span></h1>
+            <p class="subtitle">Identify inefficiencies and cost optimization opportunities in your current NetSuite implementation</p>
+            <div class="expert-badge">
+                With certified NetSuite implementation specialists
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="two-column">
+            <div class="main-content">
+                <div class="assessment-intro">
+                    <h3>Executive Assessment Overview</h3>
+                    <p>This structured evaluation examines seven critical areas of your NetSuite implementation to identify operational inefficiencies and cost optimization opportunities.</p>
+                    <p>Assessment completion time: 8-10 minutes</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-number">73%</span>
+                        <span class="stat-label">of implementations have optimization gaps</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$127K</span>
+                        <span class="stat-label">average annual value identified</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">90 days</span>
+                        <span class="stat-label">typical optimization timeline</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Assessment Areas</h2>
+                    <div class="key-areas">
+                        <div class="key-area">
+                            <h4>Workflow Automation</h4>
+                            <p>Review of automated processes, approval workflows, and manual intervention requirements</p>
+                        </div>
+                        <div class="key-area">
+                            <h4>Module Utilization</h4>
+                            <p>Analysis of licensed module adoption rates and feature utilization across departments</p>
+                        </div>
+                        <div class="key-area">
+                            <h4>Custom Development</h4>
+                            <p>Evaluation of custom scripts, performance impact, and maintenance requirements</p>
+                        </div>
+                        <div class="key-area">
+                            <h4>Reporting Infrastructure</h4>
+                            <p>Assessment of dashboard effectiveness, role-based access, and analytics capabilities</p>
+                        </div>
+                        <div class="key-area">
+                            <h4>System Integration</h4>
+                            <p>Review of data flow between NetSuite and external systems</p>
+                        </div>
+                        <div class="key-area">
+                            <h4>Business Intelligence</h4>
+                            <p>Analysis of reporting capabilities, real-time analytics, and decision support tools</p>
+                        </div>
+                        <div class="key-area">
+                            <h4>License Optimization</h4>
+                            <p>Review of user access patterns, permission structures, and licensing efficiency</p>
+                        </div>
+                        <div class="key-area">
+                            <h4>Performance Metrics</h4>
+                            <p>Benchmark analysis against industry standards and best practices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>What You Will Receive</h2>
+                    <ul class="value-props">
+                        <li>Comprehensive assessment report with specific recommendations</li>
+                        <li>Quantified cost-benefit analysis for identified improvements</li>
+                        <li>Priority-ranked implementation roadmap</li>
+                        <li>Benchmark comparison against industry standards</li>
+                        <li>Executive summary with key findings and projected ROI</li>
+                    </ul>
+                </div>
+
+                <!-- NetSuite Support Services Information -->
+                <div class="section">
+                    <h2>About Our NetSuite Support Services</h2>
+                    <div style="background: #f8f9fa; padding: 32px; border-radius: 8px; border-left: 4px solid #dc3545;">
+                        <p style="margin-bottom: 20px;">Folio3 SmartCare provides comprehensive NetSuite support and optimization services designed to maximize your system's performance and business value. Our certified NetSuite professionals deliver ongoing technical support, system maintenance, and strategic enhancements.</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 24px 0;">
+                            <div>
+                                <h4 style="color: #2c2c2c; margin-bottom: 12px; font-weight: 600;">Technical Support</h4>
+                                <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5;">24/7 technical assistance, troubleshooting, and issue resolution by certified NetSuite administrators and developers.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #2c2c2c; margin-bottom: 12px; font-weight: 600;">System Optimization</h4>
+                                <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5;">Performance monitoring, database optimization, and workflow improvements to enhance system efficiency.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #2c2c2c; margin-bottom: 12px; font-weight: 600;">Custom Development</h4>
+                                <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5;">SuiteScript development, custom fields, forms, and workflows tailored to your business requirements.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #2c2c2c; margin-bottom: 12px; font-weight: 600;">Integration Services</h4>
+                                <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.5;">API integration with third-party systems, data migration, and real-time synchronization solutions.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #e9ecef;">
+                            <p style="color: #495057; font-weight: 500;">Our support model includes dedicated account management, regular system health checks, and proactive maintenance to prevent issues before they impact operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assessment Sections (Hidden Initially) -->
+                <div id="assessmentSections" style="display: none;">
+                    <!-- Section 1: Automation -->
+                    <div class="assessment-section active" data-section="1">
+                        <div class="section-header">
+                            <div class="section-number">1</div>
+                            <div class="section-title">Workflow Automation Analysis</div>
+                        </div>
+                        <p style="margin-bottom: 24px; color: #6c757d;">Select the option that best describes your current automation implementation:</p>
+                        
+                        <div class="assessment-options">
+                            <div class="assessment-option">
+                                <input type="radio" id="auto1" name="automation" value="3">
+                                <label for="auto1">
+                                    <div class="option-content">
+                                        <div class="option-title">Advanced Automation Implementation</div>
+                                        <div class="option-description">Most business processes automated including approvals, invoicing, and order processing</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="auto2" name="automation" value="2">
+                                <label for="auto2">
+                                    <div class="option-content">
+                                        <div class="option-title">Selective Automation</div>
+                                        <div class="option-description">Key processes automated but manual intervention required for exceptions</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="auto3" name="automation" value="1">
+                                <label for="auto3">
+                                    <div class="option-content">
+                                        <div class="option-title">Basic Automation</div>
+                                        <div class="option-description">Limited automation with significant manual processing requirements</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="auto4" name="automation" value="0">
+                                <label for="auto4">
+                                    <div class="option-content">
+                                        <div class="option-title">Manual Processing</div>
+                                        <div class="option-description">Predominantly manual workflows with minimal automation</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="roi-insight">
+                            <strong>Performance Impact:</strong> Organizations with advanced automation report 25-40% reduction in processing time and 15-20% improvement in accuracy rates.
+                        </div>
+
+                        <button class="next-btn" onclick="nextSection(2)">Continue Assessment</button>
+                    </div>
+
+                    <!-- Section 2: Module Utilization -->
+                    <div class="assessment-section" data-section="2">
+                        <div class="section-header">
+                            <div class="section-number">2</div>
+                            <div class="section-title">Module Utilization Assessment</div>
+                        </div>
+                        <p style="margin-bottom: 24px; color: #6c757d;">Evaluate your current module adoption and utilization:</p>
+                        
+                        <div class="assessment-options">
+                            <div class="assessment-option">
+                                <input type="radio" id="mod1" name="modules" value="3">
+                                <label for="mod1">
+                                    <div class="option-content">
+                                        <div class="option-title">Comprehensive Utilization</div>
+                                        <div class="option-description">All licensed modules actively used with high user adoption rates</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="mod2" name="modules" value="2">
+                                <label for="mod2">
+                                    <div class="option-content">
+                                        <div class="option-title">Strategic Implementation</div>
+                                        <div class="option-description">Core modules well-utilized with planned expansion into additional features</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="mod3" name="modules" value="1">
+                                <label for="mod3">
+                                    <div class="option-content">
+                                        <div class="option-title">Limited Adoption</div>
+                                        <div class="option-description">Basic functionality implemented with underutilized advanced features</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="mod4" name="modules" value="0">
+                                <label for="mod4">
+                                    <div class="option-content">
+                                        <div class="option-title">Licensing Inefficiency</div>
+                                        <div class="option-description">Paying for modules or features that are not actively used</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="roi-insight">
+                            <strong>Cost Impact:</strong> Underutilized modules typically represent 20-35% of total licensing costs, with optimization opportunities ranging from $25K to $150K annually.
+                        </div>
+
+                        <button class="next-btn" onclick="nextSection(3)">Continue Assessment</button>
+                    </div>
+
+                    <!-- Section 3: Custom Development -->
+                    <div class="assessment-section" data-section="3">
+                        <div class="section-header">
+                            <div class="section-number">3</div>
+                            <div class="section-title">Custom Development Review</div>
+                        </div>
+                        <p style="margin-bottom: 24px; color: #6c757d;">Assess the state of your custom code and development practices:</p>
+                        
+                        <div class="assessment-options">
+                            <div class="assessment-option">
+                                <input type="radio" id="dev1" name="development" value="3">
+                                <label for="dev1">
+                                    <div class="option-content">
+                                        <div class="option-title">Enterprise-Grade Development</div>
+                                        <div class="option-description">Well-documented, performance-optimized code with regular maintenance cycles</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="dev2" name="development" value="2">
+                                <label for="dev2">
+                                    <div class="option-content">
+                                        <div class="option-title">Managed Development</div>
+                                        <div class="option-description">Stable custom code with documented business logic and version control</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="dev3" name="development" value="1">
+                                <label for="dev3">
+                                    <div class="option-content">
+                                        <div class="option-title">Legacy Code Challenges</div>
+                                        <div class="option-description">Functional but aging custom code requiring regular troubleshooting</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="dev4" name="development" value="0">
+                                <label for="dev4">
+                                    <div class="option-content">
+                                        <div class="option-title">Development Technical Debt</div>
+                                        <div class="option-description">Problematic custom code impacting performance and blocking system updates</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="roi-insight">
+                            <strong>Performance Impact:</strong> Inefficient custom code can reduce system performance by 30-50% and increase maintenance costs by $50K-$200K annually.
+                        </div>
+
+                        <button class="next-btn" onclick="nextSection(4)">Continue Assessment</button>
+                    </div>
+
+                    <!-- Section 4: Reporting -->
+                    <div class="assessment-section" data-section="4">
+                        <div class="section-header">
+                            <div class="section-number">4</div>
+                            <div class="section-title">Reporting Infrastructure Analysis</div>
+                        </div>
+                        <p style="margin-bottom: 24px; color: #6c757d;">Evaluate your current reporting and dashboard implementation:</p>
+                        
+                        <div class="assessment-options">
+                            <div class="assessment-option">
+                                <input type="radio" id="rep1" name="reporting" value="3">
+                                <label for="rep1">
+                                    <div class="option-content">
+                                        <div class="option-title">Strategic Reporting Framework</div>
+                                        <div class="option-description">Role-based dashboards with real-time KPIs and executive-level visibility</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="rep2" name="reporting" value="2">
+                                <label for="rep2">
+                                    <div class="option-content">
+                                        <div class="option-title">Structured Reporting</div>
+                                        <div class="option-description">Departmental dashboards with regular reporting cycles and some customization</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="rep3" name="reporting" value="1">
+                                <label for="rep3">
+                                    <div class="option-content">
+                                        <div class="option-title">Basic Reporting</div>
+                                        <div class="option-description">Standard reports with limited customization and manual report generation</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="rep4" name="reporting" value="0">
+                                <label for="rep4">
+                                    <div class="option-content">
+                                        <div class="option-title">Reporting Gaps</div>
+                                        <div class="option-description">Heavy reliance on data exports and external analysis tools</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="roi-insight">
+                            <strong>Efficiency Impact:</strong> Advanced reporting infrastructure reduces management reporting time by 60-80% and improves decision-making speed by 3-7 days.
+                        </div>
+
+                        <button class="next-btn" onclick="nextSection(5)">Continue Assessment</button>
+                    </div>
+
+                    <!-- Section 5: Integration -->
+                    <div class="assessment-section" data-section="5">
+                        <div class="section-header">
+                            <div class="section-number">5</div>
+                            <div class="section-title">System Integration Assessment</div>
+                        </div>
+                        <p style="margin-bottom: 24px; color: #6c757d;">Review your NetSuite integration with other business systems:</p>
+                        
+                        <div class="assessment-options">
+                            <div class="assessment-option">
+                                <input type="radio" id="int1" name="integration" value="3">
+                                <label for="int1">
+                                    <div class="option-content">
+                                        <div class="option-title">Enterprise Integration</div>
+                                        <div class="option-description">Comprehensive API-based integrations with real-time data synchronization</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="int2" name="integration" value="2">
+                                <label for="int2">
+                                    <div class="option-content">
+                                        <div class="option-title">Strategic Connections</div>
+                                        <div class="option-description">Key systems integrated with scheduled data synchronization processes</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="int3" name="integration" value="1">
+                                <label for="int3">
+                                    <div class="option-content">
+                                        <div class="option-title">Limited Integration</div>
+                                        <div class="option-description">Basic connections requiring manual data transfer and reconciliation</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="int4" name="integration" value="0">
+                                <label for="int4">
+                                    <div class="option-content">
+                                        <div class="option-title">Isolated System</div>
+                                        <div class="option-description">Minimal integration with significant manual data entry requirements</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="roi-insight">
+                            <strong>Operational Impact:</strong> Comprehensive integration eliminates 15-25 hours of manual data processing weekly and reduces error rates by 85-95%.
+                        </div>
+
+                        <button class="next-btn" onclick="nextSection(6)">Continue Assessment</button>
+                    </div>
+
+                    <!-- Section 6: Business Intelligence -->
+                    <div class="assessment-section" data-section="6">
+                        <div class="section-header">
+                            <div class="section-number">6</div>
+                            <div class="section-title">Business Intelligence Capabilities</div>
+                        </div>
+                        <p style="margin-bottom: 24px; color: #6c757d;">Assess your analytics and business intelligence implementation:</p>
+                        
+                        <div class="assessment-options">
+                            <div class="assessment-option">
+                                <input type="radio" id="bi1" name="business_intelligence" value="3">
+                                <label for="bi1">
+                                    <div class="option-content">
+                                        <div class="option-title">Advanced Analytics Platform</div>
+                                        <div class="option-description">Predictive analytics, automated insights, and executive decision support tools</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="bi2" name="business_intelligence" value="2">
+                                <label for="bi2">
+                                    <div class="option-content">
+                                        <div class="option-title">Structured Analytics</div>
+                                        <div class="option-description">Custom reports and KPI tracking with trend analysis capabilities</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="bi3" name="business_intelligence" value="1">
+                                <label for="bi3">
+                                    <div class="option-content">
+                                        <div class="option-title">Basic Analytics</div>
+                                        <div class="option-description">Standard financial and operational reports with limited analytical depth</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="bi4" name="business_intelligence" value="0">
+                                <label for="bi4">
+                                    <div class="option-content">
+                                        <div class="option-title">Data Export Dependency</div>
+                                        <div class="option-description">Most analysis performed outside NetSuite using exported data</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="roi-insight">
+                            <strong>Strategic Impact:</strong> Advanced business intelligence capabilities improve forecast accuracy by 35-50% and reduce planning cycles by 40-60%.
+                        </div>
+
+                        <button class="next-btn" onclick="nextSection(7)">Continue Assessment</button>
+                    </div>
+
+                    <!-- Section 7: License Optimization -->
+                    <div class="assessment-section" data-section="7">
+                        <div class="section-header">
+                            <div class="section-number">7</div>
+                            <div class="section-title">License Optimization Analysis</div>
+                        </div>
+                        <p style="margin-bottom: 24px; color: #6c757d;">Evaluate your current licensing structure and user management:</p>
+                        
+                        <div class="assessment-options">
+                            <div class="assessment-option">
+                                <input type="radio" id="lic1" name="licensing" value="3">
+                                <label for="lic1">
+                                    <div class="option-content">
+                                        <div class="option-title">Optimized License Management</div>
+                                        <div class="option-description">Active user monitoring with role-based permissions and regular access reviews</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="lic2" name="licensing" value="2">
+                                <label for="lic2">
+                                    <div class="option-content">
+                                        <div class="option-title">Managed Licensing</div>
+                                        <div class="option-description">Structured user provisioning with periodic access reviews</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="lic3" name="licensing" value="1">
+                                <label for="lic3">
+                                    <div class="option-content">
+                                        <div class="option-title">Basic License Control</div>
+                                        <div class="option-description">Standard user management with limited optimization practices</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="assessment-option">
+                                <input type="radio" id="lic4" name="licensing" value="0">
+                                <label for="lic4">
+                                    <div class="option-content">
+                                        <div class="option-title">License Inefficiency</div>
+                                        <div class="option-description">Inactive user accounts and over-provisioned access levels</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="roi-insight">
+                            <strong>Cost Impact:</strong> License optimization typically reduces annual NetSuite costs by 20-35%, representing $75K-$300K in savings for enterprise implementations.
+                        </div>
+
+                        <button class="next-btn" onclick="showResults()">Complete Assessment</button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection">
+                    <h2>Assessment Results</h2>
+                    <div class="total-score" id="totalScore">0/21</div>
+                    
+                    <div class="score-interpretation" id="scoreInterpretation">
+                        <!-- Dynamic content based on score -->
+                    </div>
+
+                    <div class="cta-section">
+                        <h3>Next Steps</h3>
+                        <p id="savingsEstimate">Based on your assessment results, we have identified optimization opportunities.</p>
+                        <div style="margin: 24px 0;">
+                            <button class="cta-button" onclick="scheduleConsultation()">
+                                Schedule Consultation
+                            </button>
+                            <button class="cta-button" onclick="downloadReport()" style="background: #6c757d;">
+                                Download Report
+                            </button>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-top: 16px; opacity: 0.9;">30-minute strategic review with NetSuite optimization specialist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="assessment-form">
+                <div class="form-header">
+                    <h3>Request Assessment Report</h3>
+                    <p>Receive your detailed NetSuite optimization analysis and recommendations.</p>
+                </div>
+
+                <form id="leadForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Business Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="title">Job Title</label>
+                        <select id="title" name="title" required>
+                            <option value="">Select Title</option>
+                            <option value="ceo">Chief Executive Officer</option>
+                            <option value="cfo">Chief Financial Officer</option>
+                            <option value="coo">Chief Operating Officer</option>
+                            <option value="cio">Chief Information Officer</option>
+                            <option value="finance-director">Finance Director</option>
+                            <option value="it-director">IT Director</option>
+                            <option value="operations-director">Operations Director</option>
+                            <option value="controller">Controller</option>
+                            <option value="vp-finance">VP Finance</option>
+                            <option value="vp-operations">VP Operations</option>
+                            <option value="other">Other Executive Role</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">Industry</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select Industry</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="distribution">Distribution & Wholesale</option>
+                            <option value="retail-ecommerce">Retail & E-commerce</option>
+                            <option value="professional-services">Professional Services</option>
+                            <option value="software-technology">Software & Technology</option>
+                            <option value="healthcare">Healthcare & Life Sciences</option>
+                            <option value="financial-services">Financial Services</option>
+                            <option value="media-publishing">Media & Publishing</option>
+                            <option value="nonprofit">Nonprofit</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="netsuiteYears">NetSuite Implementation Timeline</label>
+                        <select id="netsuiteYears" name="netsuiteYears" required>
+                            <option value="">Select Timeline</option>
+                            <option value="planning">Currently evaluating NetSuite</option>
+                            <option value="less-than-1">Less than 1 year</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="6-10">6-10 years</option>
+                            <option value="more-than-10">More than 10 years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="annualRevenue">Annual Revenue</label>
+                        <select id="annualRevenue" name="annualRevenue">
+                            <option value="">Select Range</option>
+                            <option value="under-10m">Under $10M</option>
+                            <option value="10m-50m">$10M - $50M</option>
+                            <option value="50m-100m">$50M - $100M</option>
+                            <option value="100m-500m">$100M - $500M</option>
+                            <option value="500m-1b">$500M - $1B</option>
+                            <option value="over-1b">Over $1B</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="primaryChallenge">Primary NetSuite Challenge</label>
+                        <select id="primaryChallenge" name="primaryChallenge">
+                            <option value="">Select Challenge</option>
+                            <option value="performance">System performance issues</option>
+                            <option value="user-adoption">Low user adoption</option>
+                            <option value="reporting">Inadequate reporting capabilities</option>
+                            <option value="integration">Integration challenges</option>
+                            <option value="customization">Customization complexity</option>
+                            <option value="cost-optimization">Cost optimization</option>
+                            <option value="process-efficiency">Process efficiency</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="submit-btn" id="startAssessment" disabled>
+                        Begin Assessment
+                    </button>
+                </form>
+
+                <div class="privacy-notice">
+                    By submitting this form, you agree to our <a href="#" target="_blank">privacy policy</a> and terms of service. We will use the information provided to deliver your assessment results and may contact you regarding NetSuite optimization services.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let assessmentData = {
+            leadInfo: {},
+            scores: {
+                automation: 0,
+                modules: 0,
+                development: 0,
+                reporting: 0,
+                integration: 0,
+                business_intelligence: 0,
+                licensing: 0
+            },
+            totalScore: 0,
+            completedSections: 0,
+            currentSection: 0
+        };
+
+        // Form validation and handling
+        document.getElementById('leadForm').addEventListener('input', function(e) {
+            const formData = new FormData(this);
+            for (let [key, value] of formData.entries()) {
+                assessmentData.leadInfo[key] = value;
+            }
+            validateForm();
+        });
+
+        function validateForm() {
+            const required = ['firstName', 'lastName', 'email', 'phone', 'company', 'title', 'industry', 'netsuiteYears'];
+            const completed = required.every(field => assessmentData.leadInfo[field]);
+            
+            const startBtn = document.getElementById('startAssessment');
+            startBtn.disabled = !completed;
+            
+            if (completed) {
+                startBtn.textContent = 'Begin Assessment';
+                startBtn.onclick = startAssessment;
+            }
+        }
+
+        function startAssessment() {
+            // Send lead data
+            sendLeadData({
+                ...assessmentData.leadInfo,
+                action: 'assessment_started',
+                timestamp: new Date().toISOString()
+            });
+
+            // Show assessment sections
+            document.getElementById('assessmentSections').style.display = 'block';
+            assessmentData.currentSection = 1;
+            
+            // Scroll to first section
+            document.querySelector('.assessment-section[data-section="1"]').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Assessment handling
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'radio') {
+                // Remove selected class from all options in this group
+                const groupName = e.target.name;
+                const allOptions = document.querySelectorAll(`input[name="${groupName}"]`);
+                allOptions.forEach(option => {
+                    option.closest('.assessment-option').classList.remove('selected');
+                });
+                
+                // Add selected class to chosen option
+                e.target.closest('.assessment-option').classList.add('selected');
+                
+                updateSectionScore(e.target);
+                
+                // Show next button
+                const section = e.target.closest('.assessment-section');
+                const nextBtn = section.querySelector('.next-btn');
+                nextBtn.style.display = 'inline-block';
+            }
+        });
+
+        function updateSectionScore(input) {
+            const sectionName = input.name;
+            const score = parseInt(input.value);
+            assessmentData.scores[sectionName] = score;
+            
+            // Calculate total
+            assessmentData.totalScore = Object.values(assessmentData.scores).reduce((a, b) => a + b, 0);
+            updateProgress();
+        }
+
+        function nextSection(sectionNum) {
+            // Hide current section
+            document.querySelector('.assessment-section.active').classList.remove('active');
+            
+            // Show next section
+            const nextSection = document.querySelector(`.assessment-section[data-section="${sectionNum}"]`);
+            if (nextSection) {
+                nextSection.classList.add('active');
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+                assessmentData.currentSection = sectionNum;
+            }
+            
+            assessmentData.completedSections++;
+            updateProgress();
+        }
+
+        function showResults() {
+            document.getElementById('resultsSection').style.display = 'block';
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+            
+            const totalScore = assessmentData.totalScore;
+            document.getElementById('totalScore').textContent = `${totalScore}/21`;
+            
+            updateScoreInterpretation(totalScore);
+            
+            // Send completion data
+            sendLeadData({
+                ...assessmentData.leadInfo,
+                scores: assessmentData.scores,
+                totalScore: totalScore,
+                action: 'assessment_completed',
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        function updateScoreInterpretation(score) {
+            const interpretation = document.getElementById('scoreInterpretation');
+            const savingsEstimate = document.getElementById('savingsEstimate');
+            let content = '';
+            let savings = '';
+            
+            if (score >= 18) {
+                content = `
+                    <h3>Optimized Implementation</h3>
+                    <p>Your NetSuite implementation demonstrates strong operational efficiency. Minor optimization opportunities may still exist in advanced feature utilization and process refinement.</p>
+                `;
+                savings = 'We have identified potential annual value optimization of $25,000 - $75,000';
+            } else if (score >= 14) {
+                content = `
+                    <h3>Strong Foundation with Growth Opportunities</h3>
+                    <p>Your implementation shows good structural foundation with clear opportunities for operational enhancement and cost optimization across multiple areas.</p>
+                `;
+                savings = 'Assessment indicates potential annual value optimization of $75,000 - $200,000';
+            } else if (score >= 10) {
+                content = `
+                    <h3>Significant Optimization Potential</h3>
+                    <p>Multiple areas show substantial room for improvement. Strategic optimization initiatives could deliver meaningful operational efficiency gains and cost reductions.</p>
+                `;
+                savings = 'Analysis suggests potential annual value optimization of $200,000 - $500,000';
+            } else {
+                content = `
+                    <h3>Critical Optimization Required</h3>
+                    <p>Your assessment indicates fundamental inefficiencies that may be significantly impacting operational performance and total cost of ownership.</p>
+                `;
+                savings = 'Results indicate potential annual value optimization exceeding $500,000';
+            }
+            
+            interpretation.innerHTML = content;
+            savingsEstimate.textContent = savings;
+        }
+
+        function updateProgress() {
+            const totalSteps = 8; // 7 assessment sections + form completion
+            const completedSteps = (assessmentData.leadInfo.email ? 1 : 0) + assessmentData.completedSections;
+            const progress = (completedSteps / totalSteps) * 100;
+            
+            document.getElementById('progressFill').style.width = `${progress}%`;
+        }
+
+        function scheduleConsultation() {
+            // Track the consultation request
+            sendLeadData({
+                ...assessmentData.leadInfo,
+                action: 'consultation_requested',
+                scores: assessmentData.scores,
+                totalScore: assessmentData.totalScore,
+                timestamp: new Date().toISOString()
+            });
+            
+            // Track conversion with higher value for consultation requests
+            trackConversion('consultation_request', assessmentData.totalScore < 10 ? 1000 : 750);
+            
+            // Redirect to your contact form
+            window.open('https://netsuite.folio3.com/contact', '_blank');
+        }
+
+        function downloadReport() {
+            // Send comprehensive lead data to backend
+            const reportData = {
+                leadInfo: assessmentData.leadInfo,
+                scores: assessmentData.scores,
+                totalScore: assessmentData.totalScore,
+                recommendations: generateReportContent(),
+                action: 'report_requested',
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                referrer: document.referrer
+            };
+            
+            // Show immediate professional response
+            showReportModal();
+            
+            // Track conversion
+            trackConversion('report_download', assessmentData.totalScore < 14 ? 750 : 500);
+        }
+
+        function showReportModal() {
+            const modalHTML = `
+                <div id="reportModal" onclick="closeReportModal()" style="
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                ">
+                    <div onclick="event.stopPropagation()" style="
+                        background: white;
+                        padding: 40px;
+                        border-radius: 12px;
+                        max-width: 600px;
+                        width: 90%;
+                        text-align: center;
+                        position: relative;
+                    ">
+                        <div style="color: #28a745; font-size: 3rem; margin-bottom: 20px;">✓</div>
+                        <h2 style="color: #2c2c2c; margin-bottom: 16px;">Assessment Complete</h2>
+                        <p style="color: #6c757d; margin-bottom: 24px; line-height: 1.6;">
+                            Thank you for completing the NetSuite optimization assessment. Your personalized report with detailed recommendations is being prepared.
+                        </p>
+                        
+                        <div style="background: #f8f9fa; padding: 24px; border-radius: 8px; margin: 24px 0; text-align: left;">
+                            <h4 style="color: #2c2c2c; margin-bottom: 16px;">What happens next:</h4>
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                                <span style="color: #dc3545; margin-right: 12px; font-weight: bold;">1.</span>
+                                <span style="color: #495057;">Detailed PDF report sent to <strong>${assessmentData.leadInfo.email}</strong> within 2 hours</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                                <span style="color: #dc3545; margin-right: 12px; font-weight: bold;">2.</span>
+                                <span style="color: #495057;">NetSuite specialist will contact you within 24 hours</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start;">
+                                <span style="color: #dc3545; margin-right: 12px; font-weight: bold;">3.</span>
+                                <span style="color: #495057;">30-minute consultation to discuss optimization opportunities</span>
+                            </div>
+                        </div>
+
+                        <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 8px; margin: 24px 0;">
+                            <strong style="color: #856404;">Your Assessment Score: ${assessmentData.totalScore}/21</strong><br>
+                            <span style="color: #856404; font-size: 0.95rem;">${getScoreMessage(assessmentData.totalScore)}</span>
+                        </div>
+
+                        <span onclick="closeReportModal()" style="
+                            position: absolute;
+                            top: 15px;
+                            right: 20px;
+                            font-size: 24px;
+                            cursor: pointer;
+                            color: #999;
+                            font-weight: bold;
+                        ">&times;</span>
+
+                        <div style="margin-top: 32px;">
+                            <button onclick="closeReportModal()" style="
+                                background: #dc3545;
+                                color: white;
+                                border: none;
+                                padding: 16px 32px;
+                                border-radius: 4px;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                margin-right: 12px;
+                            ">Close</button>
+                            <button onclick="scheduleConsultation(); closeReportModal();" style="
+                                background: #6c757d;
+                                color: white;
+                                border: none;
+                                padding: 16px 32px;
+                                border-radius: 4px;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                            ">Schedule Call Now</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+
+        function closeReportModal() {
+            const modal = document.getElementById('reportModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function getScoreMessage(score) {
+            if (score >= 18) return 'Well-optimized implementation with minor enhancement opportunities';
+            else if (score >= 14) return 'Strong foundation with significant optimization potential';
+            else if (score >= 10) return 'Multiple areas requiring strategic optimization';
+            else return 'Critical optimization needed for maximum ROI';
+        }
+
+        function generateReportContent() {
+            const totalScore = assessmentData.totalScore;
+            let recommendations = [];
+            let priorityActions = [];
+            let estimatedSavings = '';
+            let criticalAreas = [];
+            
+            // Analyze each category and generate specific recommendations
+            Object.entries(assessmentData.scores).forEach(([category, score]) => {
+                const categoryName = getCategoryDisplayName(category);
+                
+                if (score <= 1) {
+                    criticalAreas.push(categoryName);
+                    
+                    switch(category) {
+                        case 'automation':
+                            recommendations.push({
+                                area: 'Workflow Automation',
+                                issue: 'Manual processes creating bottlenecks and errors',
+                                solution: 'Implement automated workflows for invoice processing, approvals, and order management',
+                                impact: '$50,000-$150,000 annual savings in labor costs',
+                                timeline: '60-90 days',
+                                priority: 'High'
+                            });
+                            priorityActions.push('Identify and automate top 5 manual processes');
+                            break;
+                            
+                        case 'modules':
+                            recommendations.push({
+                                area: 'Module Utilization',
+                                issue: 'Paying for underutilized or unused NetSuite modules',
+                                solution: 'Conduct comprehensive module audit and optimize licensing structure',
+                                impact: '$25,000-$100,000 annual cost reduction',
+                                timeline: '30-45 days',
+                                priority: 'High'
+                            });
+                            priorityActions.push('Complete module utilization audit within 30 days');
+                            break;
+                            
+                        case 'development':
+                            recommendations.push({
+                                area: 'Custom Development',
+                                issue: 'Legacy code impacting performance and upgrade capability',
+                                solution: 'Code audit, optimization, and documentation project',
+                                impact: '$75,000-$200,000 in avoided maintenance costs',
+                                timeline: '90-120 days',
+                                priority: 'Medium'
+                            });
+                            priorityActions.push('Schedule custom code review and optimization');
+                            break;
+                            
+                        case 'reporting':
+                            recommendations.push({
+                                area: 'Reporting Infrastructure',
+                                issue: 'Inefficient reporting processes and poor data visibility',
+                                solution: 'Implement role-based dashboards and automated reporting',
+                                impact: '$30,000-$80,000 in time savings annually',
+                                timeline: '45-60 days',
+                                priority: 'Medium'
+                            });
+                            priorityActions.push('Deploy executive and departmental dashboards');
+                            break;
+                            
+                        case 'integration':
+                            recommendations.push({
+                                area: 'System Integration',
+                                issue: 'Manual data entry and synchronization between systems',
+                                solution: 'Implement API-based integrations for key business systems',
+                                impact: '$40,000-$120,000 in efficiency gains',
+                                timeline: '60-90 days',
+                                priority: 'High'
+                            });
+                            priorityActions.push('Map integration requirements and implement priority connections');
+                            break;
+                            
+                        case 'business_intelligence':
+                            recommendations.push({
+                                area: 'Business Intelligence',
+                                issue: 'Limited analytics capabilities and Excel dependency',
+                                solution: 'Deploy advanced analytics and predictive reporting tools',
+                                impact: '$60,000-$150,000 in improved decision-making',
+                                timeline: '90-120 days',
+                                priority: 'Medium'
+                            });
+                            priorityActions.push('Implement advanced analytics and forecasting capabilities');
+                            break;
+                            
+                        case 'licensing':
+                            recommendations.push({
+                                area: 'License Optimization',
+                                issue: 'Inefficient user licensing and over-provisioned access',
+                                solution: 'Optimize user roles, permissions, and licensing structure',
+                                impact: '$20,000-$80,000 annual licensing savings',
+                                timeline: '30-45 days',
+                                priority: 'High'
+                            });
+                            priorityActions.push('Audit user access and optimize licensing immediately');
+                            break;
+                    }
+                }
+            });
+            
+            // Calculate estimated savings based on score
+            if (totalScore >= 18) estimatedSavings = '$50,000 - $150,000';
+            else if (totalScore >= 14) estimatedSavings = '$150,000 - $400,000';
+            else if (totalScore >= 10) estimatedSavings = '$400,000 - $800,000';
+            else estimatedSavings = '$800,000+';
+            
+            return {
+                companyInfo: {
+                    name: assessmentData.leadInfo.company,
+                    contact: assessmentData.leadInfo.firstName + ' ' + assessmentData.leadInfo.lastName,
+                    email: assessmentData.leadInfo.email,
+                    title: assessmentData.leadInfo.title,
+                    industry: assessmentData.leadInfo.industry,
+                    revenue: assessmentData.leadInfo.annualRevenue,
+                    netsuiteYears: assessmentData.leadInfo.netsuiteYears
+                },
+                assessment: {
+                    totalScore: totalScore,
+                    maxScore: 21,
+                    completionDate: new Date().toLocaleDateString(),
+                    criticalAreas: criticalAreas,
+                    scoreBreakdown: assessmentData.scores
+                },
+                optimization: {
+                    recommendations: recommendations,
+                    priorityActions: priorityActions,
+                    estimatedSavings: estimatedSavings,
+                    implementationTimeline: recommendations.length > 4 ? '6-12 months' : '3-6 months',
+                    roi: recommendations.length > 4 ? '300-500%' : '200-300%'
+                }
+            };
+        }
+
+        function getCategoryDisplayName(category) {
+            const names = {
+                'automation': 'Workflow Automation',
+                'modules': 'Module Utilization',
+                'development': 'Custom Development',
+                'reporting': 'Reporting Infrastructure',
+                'integration': 'System Integration',
+                'business_intelligence': 'Business Intelligence',
+                'licensing': 'License Management'
+            };
+            return names[category] || category;
+        }
+
+        
+                
+                // Conversion tracking for Google Ads
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXXXX', // Replace with your conversion ID
+                    'value': value,
+                    'currency': 'USD'
+                });
+            }
+            
+            // Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    value: value,
+                    currency: 'USD',
+                    content_name: 'NetSuite Assessment Report'
+                });
+            }
+            
+            // LinkedIn Insight Tag
+            if (typeof lintrk !== 'undefined') {
+                lintrk('track', { conversion_id: 'XXXXXXXX' }); // Replace with your conversion ID
+            }
+        }
+
+        function sendLeadData(data) {
+            // Enhanced backend integration
+            fetch('/api/leads/netsuite-assessment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Lead data sent successfully:', result);
+                
+                // If backend returns a direct PDF URL, trigger download
+                if (result.reportUrl) {
+                    const link = document.createElement('a');
+                    link.href = result.reportUrl;
+                    link.download = `NetSuite-Assessment-${assessmentData.leadInfo.company}.pdf`;
+                    link.click();
+                }
+            })
+            .catch(error => {
+                console.error('Error sending lead data:', error);
+                // Still show success message to user
+            });
+            
+            // Send to Google Sheets
+            sendToGoogleSheets(data);
+            
+            // Backup: Send to marketing automation platforms
+            sendToHubSpot(data);
+            sendToMailchimp(data);
+        }
+
+        function sendToGoogleSheets(data) {
+            // Your Google Sheets Web App URL
+            
+            
+            // Prepare data for Google Sheets
+            const sheetData = {
+                timestamp: new Date().toISOString(),
+                // Lead Information
+                firstName: data.leadInfo?.firstName || '',
+                lastName: data.leadInfo?.lastName || '',
+                email: data.leadInfo?.email || '',
+                phone: data.leadInfo?.phone || '',
+                company: data.leadInfo?.company || '',
+                title: data.leadInfo?.title || '',
+                industry: data.leadInfo?.industry || '',
+                annualRevenue: data.leadInfo?.annualRevenue || '',
+                netsuiteYears: data.leadInfo?.netsuiteYears || '',
+                primaryChallenge: data.leadInfo?.primaryChallenge || '',
+                
+                // Assessment Scores
+                automationScore: data.scores?.automation || 0,
+                modulesScore: data.scores?.modules || 0,
+                developmentScore: data.scores?.development || 0,
+                reportingScore: data.scores?.reporting || 0,
+                integrationScore: data.scores?.integration || 0,
+                businessIntelligenceScore: data.scores?.business_intelligence || 0,
+                licensingScore: data.scores?.licensing || 0,
+                totalScore: data.totalScore || 0,
+                
+                // Engagement Data
+                action: data.action || '',
+                resourceUrl: data.resourceUrl || '',
+                completionTime: data.completionTime || '',
+                userAgent: data.userAgent || navigator.userAgent,
+                referrer: data.referrer || document.referrer,
+                
+                // Calculated Fields
+                scoreCategory: getScoreCategory(data.totalScore || 0),
+                estimatedSavings: getEstimatedSavings(data.totalScore || 0),
+                leadQuality: getLeadQuality(data)
+            };
+
+            console.log('📤 Sending to Google Sheets:', sheetData);
+
+            // Send to Google Sheets with no-cors mode for local testing
+            fetch(GOOGLE_SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors', // This allows local file testing
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(sheetData)
+            })
+            .then(response => {
+                console.log('✅ Request sent to Google Sheets (no-cors mode)');
+                // Note: We can't read the response in no-cors mode, but the data should still be sent
+            })
+            .catch(error => {
+                console.error('❌ Error sending to Google Sheets:', error);
+                
+                // Fallback: Try with form data approach
+                console.log('🔄 Trying fallback method...');
+                sendDataAsFormSubmission(sheetData);
+            });
+        }
+
+        
+
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+            
+            console.log('📝 Data submitted via form method');
+        }
+
+        .catch(error => {
+                console.log('Fallback form submission attempted');
+            });
+        }
+
+        function getScoreCategory(score) {
+            if (score >= 18) return 'Optimized';
+            else if (score >= 14) return 'Strong Foundation';
+            else if (score >= 10) return 'Significant Potential';
+            else return 'Critical Need';
+        }
+
+        function getEstimatedSavings(score) {
+            if (score >= 18) return '$50,000 - $150,000';
+            else if (score >= 14) return '$150,000 - $400,000';
+            else if (score >= 10) return '$400,000 - $800,000';
+            else return '$800,000+';
+        }
+
+        function getLeadQuality(data) {
+            let quality = 'Cold';
+            
+            // Score-based qualification
+            if (data.totalScore <= 10) quality = 'Hot';
+            else if (data.totalScore <= 14) quality = 'Warm';
+            
+            // Action-based qualification
+            if (data.action === 'consultation_requested') quality = 'Hot';
+            else if (data.action === 'report_requested') quality = 'Warm';
+            
+            // Title-based qualification
+            const seniorTitles = ['ceo', 'cfo', 'coo', 'cio', 'vp-finance', 'vp-operations'];
+            if (seniorTitles.includes(data.leadInfo?.title)) {
+                quality = quality === 'Cold' ? 'Warm' : 'Hot';
+            }
+            
+            return quality;
+        }
+
+        function sendToHubSpot(data) {
+            // HubSpot Forms API integration
+            if (window.hbspt) {
+                window.hbspt.forms.create({
+                    region: "na1",
+                    portalId: "XXXXXXXX", // Your HubSpot Portal ID
+                    formId: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", // Your Form ID
+                    target: "#hubspot-form-container",
+                    onFormSubmit: function($form) {
+                        // Form submitted to HubSpot
+                        console.log('HubSpot form submitted');
+                    }
+                });
+            }
+        }
+
+        function openResource(url) {
+            // Track resource engagement
+            sendLeadData({
+                ...assessmentData.leadInfo,
+                action: 'resource_clicked',
+                resourceUrl: url,
+                scores: assessmentData.scores,
+                totalScore: assessmentData.totalScore,
+                timestamp: new Date().toISOString()
+            });
+            
+            // Open resource in new tab
+            window.open(url, '_blank');
+        }
+
+        function sendToMailchimp(data) {
+            // Mailchimp API integration (if using direct API)
+            fetch('/api/mailchimp/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: data.leadInfo.email,
+                    firstName: data.leadInfo.firstName,
+                    lastName: data.leadInfo.lastName,
+                    company: data.leadInfo.company,
+                    assessmentScore: data.totalScore,
+                    tags: ['netsuite-assessment', 'lead']
+                })
+            }).catch(console.error);
+        }
+
+        function sendLeadData(data) {
+            // Integration with CRM/marketing automation
+            fetch('/api/leads', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            }).catch(console.error);
+            
+            // Marketing tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'lead_action', {
+                    'event_category': 'netsuite_assessment',
+                    'event_label': data.action
+                });
+            }
+        }
+    </script>
+
+<script>
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxnKH6qmGsf8ips90L99WRojuncPcs-1yititMe9PPc6r-yRUbJ4zswyGQ4O0x8vJ1t/exec';
+
+function sendDataToSheet(data) {
+    fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    }).then(() => {
+        alert("✅ Data submitted successfully!");
+    }).catch(error => {
+        alert("❌ Failed to submit data.");
+        console.error(error);
+    });
+}
+
+// Hook into the end of showResults function to send data
+function sendFinalAssessmentData() {
+    const data = {
+        firstName: assessmentData.leadInfo.firstName || '',
+        lastName: assessmentData.leadInfo.lastName || '',
+        email: assessmentData.leadInfo.email || '',
+        phone: assessmentData.leadInfo.phone || '',
+        company: assessmentData.leadInfo.company || '',
+        title: assessmentData.leadInfo.title || '',
+        industry: assessmentData.leadInfo.industry || '',
+        annualRevenue: assessmentData.leadInfo.annualRevenue || '',
+        netsuiteYears: assessmentData.leadInfo.netsuiteYears || '',
+        primaryChallenge: assessmentData.leadInfo.primaryChallenge || '',
+        totalScore: assessmentData.totalScore || 0,
+        scores: assessmentData.scores || {}
+    };
+    sendDataToSheet(data);
+}
+
+// Inject into showResults() if it exists
+if (typeof showResults === 'function') {
+    const originalShowResults = showResults;
+    showResults = function() {
+        originalShowResults();
+        sendFinalAssessmentData();
+    };
+}
+</script>
+
+</body>
+</html>
